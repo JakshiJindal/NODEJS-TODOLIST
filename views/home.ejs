@@ -1,0 +1,68 @@
+<html>
+    <head>
+<script src="https://kit.fontawesome.com/f922b33cad.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="/css/todolist.css">  
+</head>
+    <body>
+        <div class="main">
+        <h1 class="page-heading">
+            Workout List</h1>
+            <!-- form to submit workout TODO -->
+            <form action="/add-TODO" method="POST" id="form">
+            <label for="description" class="labels">DESCRIPTION</label>
+            <br/>
+            <!-- description input starts here -->
+            <input type="text" id="description" required="required" name="description" placeholder="What you would like to do">
+            <!-- category and date for workout TODO -->
+            <div class="divider">
+                <div class="category">
+                <label class="labels">TYPE OF WORKOUT</label><br/>
+                <select name="category" required>  
+                    <option value="">Choose a type</option>  
+                    <option value="Aerobics" style="color: violet;">Aerobics</option>  
+                    <option value="Muscle Training" style="color: blue;">Muscle Training</option>  
+                    <option value="Flexibility" style="color: black;">Flexibility</option>  
+                    <option value="Zumba" style="color: green;">Zumba</option>  
+                    <option value="Balance Exercises" style="color: red;">Balance Exercises</option>  
+                </select>  
+                </div>
+                <div class="date">
+                    <label class="labels">PLAN TO DO ON</label><br/>
+                    <input type="date" required="required"
+                    id="datePicker" name="date" value="" min="2001-01-01" max="2099-12-31">
+                </div>
+            </div>
+            <!-- button to submit data and add to db  -->
+            <button type="submit" class="addButton">
+                <i class="fas fa-plus"></i>
+                ADD TODO</button>
+            </form>
+            <!-- form to delete TODOS -->
+      <form method="GET" action="/delete-TODO">
+       <!-- delete TODO button starts here -->
+        <button type="submit" class="removeButton">
+            <i class="fa-solid fa-trash-can"></i>
+            DELETE TODO</button>    
+            <!-- list of TODOS    -->
+        <% for(let i of todo_list){ %>
+                    <hr>
+                <div class="divider"> 
+                    <div class="values"> 
+                <input type="checkbox" name="id" value="<%= i._id %>">
+                <span id="desc-value">
+                    <%= i.description %>
+                    </span><br/>
+                    <div id="date-value">
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                    <%= i.date %>
+                    </div>
+                    </div>
+                    <div id="category-value">
+                       <%= i.category %>
+                       </div>
+                       </div>
+                <% } %>
+      </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,101 @@
+.main{
+    margin:0px 70px 0px 70px;
+}
+/* worlout list heading */
+.page-heading{
+    color:gray;
+    text-align: center;
+}
+
+/* form data */
+#form{
+    padding:20px 0px 0px 20px;
+}
+
+/* labels in form */
+.labels{
+    color:gray;
+    font-size:12px;
+    font-weight: bold;
+    margin:15px 0px 10px 30px;
+}
+
+/* form labels */
+#description,select,#datePicker{
+border: none;
+margin:15px 0px 10px 28px;
+}
+#description{
+    width:100%;
+}
+#datepicker,select{
+    width:300px;
+}
+#description:focus,select:focus,#datePicker:focus{
+    outline:none;
+}
+
+#description::placeholder{
+    color:lightgray;
+}
+/* divider of type and date */
+.divider{
+    display:flex;
+    width:100%;
+}
+.category,.date{
+    width:50%;
+    border:1px solid gray;
+    padding-top:10px;
+    border-left: 0px;
+}
+/* submit buttons */
+.addButton,.removeButton{
+    width:180px;
+    height:60px;
+    padding:20px;
+    color:white;
+    cursor: pointer;
+    border:none;
+}
+.addButton{
+    background-color:darkslategrey;
+    margin:20px 20px 0px 480px;
+}
+.removeButton{
+    background-color:crimson;
+    margin:20px 20px 0px 500px;
+
+}
+.addButton i,.removeButton i{
+    padding-right:10px;
+}
+/* TODOS list form start here */
+.values{
+    width:60%;
+}
+
+#desc-value{
+    color:gray;
+    font-size:20px;
+    margin-left:10px;
+}
+#date-value{
+    color:rgb(231, 215, 197);
+    font-size:14px;
+    margin-left:25px;
+    padding:10px;
+}
+#date-value i{
+    margin-right:10px;
+}
+#category-value{
+    background-color: brown;
+    padding:10px;
+    padding-bottom:16px;
+    width:70px;
+    height:30px;
+    color:white;
+    text-align: center;
+    align-items: center;
+}
